@@ -1,0 +1,11 @@
+use bandoannhanh;
+-- Thêm danh mục món ăn
+INSERT INTO category (category_name, image) VALUES
+('main_dish', 'main_dish.jpg'),
+('dessert', 'dessert.jpg'),
+('drink', 'drink.jpg');
+
+INSERT INTO product (product_name, price, image, created_date, category_name) VALUES
+('Phở Bò', 50000, 'pho_bo.jpg', '2025-03-20', 'main_dish'),
+('Bánh Flan', 20000, 'banh_flan.jpg', '2025-03-10', 'dessert'),
+('Cà Phê Sữa', 25000, 'cafe_sua.jpg', '2025-03-21', 'drink');
