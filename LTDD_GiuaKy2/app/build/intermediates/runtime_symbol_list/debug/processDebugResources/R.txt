@@ -3232,6 +3232,7 @@ int id autoCompleteToEnd 0x7f080057
 int id autoCompleteToStart 0x7f080058
 int id axisRelative 0x7f080059
 int id backgroundImage 0x7f08005a
+int id background_image 0x7f08022b
 int id barrier 0x7f08005b
 int id baseline 0x7f08005c
 int id beginOnFirstDraw 0x7f08005d
@@ -3247,6 +3248,7 @@ int id bounceEnd 0x7f080066
 int id bounceStart 0x7f080067
 int id btnLogin 0x7f080068
 int id btnVerifyOtp 0x7f080069
+int id burger_image 0x7f08022c
 int id button 0x7f08006a
 int id buttonPanel 0x7f08006b
 int id cache_measures 0x7f08006c
@@ -3603,12 +3605,14 @@ int id start 0x7f0801ca
 int id startHorizontal 0x7f0801cb
 int id startToEnd 0x7f0801cc
 int id startVertical 0x7f0801cd
+int id start_button 0x7f08022d
 int id staticLayout 0x7f0801ce
 int id staticPostLayout 0x7f0801cf
 int id stop 0x7f0801d0
 int id stretch 0x7f0801d1
 int id submenuarrow 0x7f0801d2
 int id submit_area 0x7f0801d3
+int id subtitle_text 0x7f08022e
 int id supportBtn 0x7f0801d4
 int id supportScrollUp 0x7f0801d5
 int id tabMode 0x7f0801d6
@@ -3650,6 +3654,7 @@ int id time 0x7f0801f9
 int id title 0x7f0801fa
 int id titleDividerNoCustom 0x7f0801fb
 int id title_template 0x7f0801fc
+int id title_text 0x7f08022f
 int id toggle 0x7f0801fd
 int id top 0x7f0801fe
 int id topPanel 0x7f0801ff
@@ -3810,6 +3815,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
+int layout activity_intro 0x7f0b0071
 int layout activity_login 0x7f0b001c
 int layout activity_main 0x7f0b001d
 int layout activity_otpactivity 0x7f0b001e

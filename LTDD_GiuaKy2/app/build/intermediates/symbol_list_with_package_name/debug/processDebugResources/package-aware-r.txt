@@ -3233,6 +3233,7 @@ id autoCompleteToEnd
 id autoCompleteToStart
 id axisRelative
 id backgroundImage
+id background_image
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3248,6 +3249,7 @@ id bounceEnd
 id bounceStart
 id btnLogin
 id btnVerifyOtp
+id burger_image
 id button
 id buttonPanel
 id cache_measures
@@ -3604,12 +3606,14 @@ id start
 id startHorizontal
 id startToEnd
 id startVertical
+id start_button
 id staticLayout
 id staticPostLayout
 id stop
 id stretch
 id submenuarrow
 id submit_area
+id subtitle_text
 id supportBtn
 id supportScrollUp
 id tabMode
@@ -3651,6 +3655,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id title_text
 id toggle
 id top
 id topPanel
@@ -3811,6 +3816,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_intro
 layout activity_login
 layout activity_main
 layout activity_otpactivity

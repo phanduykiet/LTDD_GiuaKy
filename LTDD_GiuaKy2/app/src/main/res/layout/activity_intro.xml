@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Background Section -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8">
+
+        <!-- Background Image (Màu Cam) -->
+        <ImageView
+            android:id="@+id/background_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/background_intro" />
+
+        <!-- Overlay Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food.Dr"
+                android:textSize="70sp"
+                android:textColor="#342697"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"
+                android:gravity="center" />
+
+            <!-- Burger Image -->
+            <ImageView
+                android:id="@+id/burger_image"
+                android:layout_width="320dp"
+                android:layout_height="320dp"
+                android:src="@drawable/logo"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/subtitle_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thức ăn nhanh"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#342697"
+                android:gravity="center"
+                android:layout_marginTop="30dp"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Button Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:gravity="center">
+
+        <!-- Start Button -->
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#FF5722"
+            android:text="Bắt đầu"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:layout_margin="30dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</LinearLayout>
