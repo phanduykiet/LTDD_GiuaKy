@@ -21,4 +21,5 @@ public class User {
   private boolean active;
   private String otp;
   private LocalDateTime otpGeneratedTime;
+  private String avatar;
 }
