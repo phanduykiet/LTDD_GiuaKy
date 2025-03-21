@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:gravity="center">
+    <!--            22110351_HongAnhKhoa-->
+    <!-- ImageView để hiển thị ảnh sản phẩm -->
+    <ImageView
+        android:id="@+id/image_product"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop" />
+
+    <!-- TextView để hiển thị tên sản phẩm -->
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingTop="8dp" />
+</LinearLayout>
