@@ -21,13 +21,16 @@
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".activities.RegisterActivity"
+            android:exported="false"/>
+        <!-- Khai báo RetrofitActivity -->
+        <activity
+            android:name=".activities.RetrofitActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

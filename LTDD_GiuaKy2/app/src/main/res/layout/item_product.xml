@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:padding="8dp"
     android:gravity="center">
-
+    <!--            22110351_HongAnhKhoa-->
     <!-- ImageView để hiển thị ảnh sản phẩm -->
     <ImageView
         android:id="@+id/image_product"

@@ -1,26 +1,29 @@
 package vn.iotstar.ltdd_giuaky.activities;
 
-import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
+import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import vn.iotstar.ltdd_giuaky.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView infoUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        setContentView(R.layout.activity_main); // Gán layout chứa infoUser TextView
+
+        infoUser = findViewById(R.id.infoUser);
+
+        // Nhận dữ liệu từ LoginActivity
+        String name = getIntent().getStringExtra("name");
+
+        if (name != null) {
+            infoUser.setText("Hi, " + name);
+        }
     }
 }

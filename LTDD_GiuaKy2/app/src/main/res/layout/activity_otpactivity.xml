@@ -5,6 +5,48 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.OTPActivity">
+    android:padding="16dp"
+    tools:context=".activities.OtpActivity">
+
+    <!-- TextView hướng dẫn -->
+    <TextView
+        android:id="@+id/tvOtpInstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nhập mã OTP đã được gửi đến email của bạn"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- EditText nhập OTP -->
+
+    <!-- Button xác nhận OTP -->
+    <EditText
+        android:id="@+id/etOtp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg1"
+        android:hint="Nhập mã OTP"
+        android:inputType="number"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvOtpInstruction" />
+
+    <Button
+        android:id="@+id/btnVerifyOtp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Xác nhận"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/etOtp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

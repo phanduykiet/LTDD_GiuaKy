@@ -72,26 +72,27 @@ public class RegisterActivity extends AppCompatActivity {
         call.enqueue(new Callback<ApiResponse>() {
             @Override
             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    // Lấy thông điệp từ phản hồi API
-                    String message = response.body().getMessage();
-                    Log.d("RegisterActivity", "Đăng ký thành công: " + message);
+                if (response.isSuccessful()) {
+                    // Đăng ký thành công, chuyển sang OTPActivity
+                    Log.d("RegisterActivity", "Đăng ký thành công");
+                    Toast.makeText(RegisterActivity.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
 
-                    // Chuyển sang OTPActivity nếu đăng ký thành công
-                    Intent intent = new Intent(RegisterActivity.this, OTPActivity.class); // Chỉnh theo xác nhận OTP
+                    Intent intent = new Intent(RegisterActivity.this, OTPActivity.class);
                     intent.putExtra("email", email); // Truyền email sang OTPActivity
                     startActivity(intent);
                     finish();
                 } else {
                     // Đăng ký thất bại
                     Log.d("RegisterActivity", "Đăng ký thất bại: " + response.message());
+                    Toast.makeText(RegisterActivity.this, "Đăng ký thất bại!", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ApiResponse> call, Throwable t) {
                 // Lỗi khi gọi API
-                Log.d("RegisterActivity", "Lỗi: " + t.getMessage());
+                Log.d("RegisterActivity", "Lỗi khi gọi API: " + t.getMessage());
+                Toast.makeText(RegisterActivity.this, "Lỗi kết nối, vui lòng thử lại!", Toast.LENGTH_SHORT).show();
             }
         });
     }
