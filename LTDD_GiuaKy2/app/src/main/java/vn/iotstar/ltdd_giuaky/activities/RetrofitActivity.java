@@ -3,6 +3,7 @@ package vn.iotstar.ltdd_giuaky.activities;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import vn.iotstar.ltdd_giuaky.OnCategoryClickListener;
 import vn.iotstar.ltdd_giuaky.R;
@@ -49,6 +52,27 @@ public class RetrofitActivity extends AppCompatActivity implements OnCategoryCli
 
         // Gọi API để lấy danh mục
         getCategories();
+
+        // Lấy dữ liệu từ Intent
+        String name = "Hi! " + getIntent().getStringExtra("name");
+        String avatar = getIntent().getStringExtra("avatar");
+
+        // Ánh xạ các view
+        TextView tvName = findViewById(R.id.infoUser);
+        ImageView ivAvatar = findViewById(R.id.imageView3);
+
+        // Hiển thị tên
+        tvName.setText(name);
+
+        // Hiển thị avatar
+        if (avatar != null && !avatar.isEmpty()) {
+            Glide.with(this)
+                    .load(avatar) // Tải ảnh từ URL
+                    .placeholder(R.drawable.avatar) // Ảnh mặc định nếu không tải được
+                    .into(ivAvatar);
+        } else {
+            ivAvatar.setImageResource(R.drawable.avatar); // Ảnh mặc định
+        }
     }
     //22110298_TruongQuocDuy
     private void getCategories() {

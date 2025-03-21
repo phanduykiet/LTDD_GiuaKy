@@ -24,20 +24,20 @@
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_top_background1.png.flat",
-        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\drawable\\top_background1.png"
-    },
-    {
-        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_logo.png.flat",
-        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\drawable\\logo.png"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\layout_item_product.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\layout\\item_product.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_search.png.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\drawable\\search.png"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\layout_item_product.xml.flat",
-        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\layout\\item_product.xml"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_logo.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\drawable\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_top_background1.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\drawable\\top_background1.png"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
@@ -76,8 +76,16 @@
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\layout\\activity_otpactivity.xml"
     },
     {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_button_background_blue.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\drawable\\button_background_blue.xml"
+    },
+    {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_btn_arraw1.png.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\drawable\\btn_arraw1.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\layout_activity_intro.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\layout\\activity_intro.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_bg2.jpg.flat",
@@ -140,6 +148,10 @@
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_img.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\drawable\\img.png"
+    },
+    {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
@@ -154,6 +166,10 @@
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "vn.iotstar.ltdd_giuaky.app-debug-33:/layout_activity_register.xml.flat",
+        "source": "vn.iotstar.ltdd_giuaky.app-main-35:/layout/activity_register.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_search_background.xml.flat",
@@ -180,28 +196,20 @@
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "vn.iotstar.ltdd_giuaky.app-debug-33:/layout_activity_login.xml.flat",
+        "source": "vn.iotstar.ltdd_giuaky.app-main-35:/layout/activity_login.xml"
     },
     {
-        "merged": "vn.iotstar.ltdd_giuaky.app-debug-33:/layout_item_product.xml.flat",
-        "source": "vn.iotstar.ltdd_giuaky.app-main-35:/layout/item_product.xml"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_top_background2.png.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\drawable\\top_background2.png"
     },
     {
-        "merged": "vn.iotstar.ltdd_giuaky.app-debug-33:/layout_item_category.xml.flat",
-        "source": "vn.iotstar.ltdd_giuaky.app-main-35:/layout/item_category.xml"
-    },
-    {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_bg1.jpg.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\drawable\\bg1.jpg"
-    },
-    {
-        "merged": "vn.iotstar.ltdd_giuaky.app-debug-33:/layout_activity_main.xml.flat",
-        "source": "vn.iotstar.ltdd_giuaky.app-main-35:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_btn_arrow2.png.flat",
@@ -210,5 +218,9 @@
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-debug-33:\\drawable_background_intro.png.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.10.2\\vn.iotstar.ltdd_giuaky.app-main-35:\\drawable\\background_intro.png"
+    },
+    {
+        "merged": "vn.iotstar.ltdd_giuaky.app-debug-33:/layout_activity_otpactivity.xml.flat",
+        "source": "vn.iotstar.ltdd_giuaky.app-main-35:/layout/activity_otpactivity.xml"
     }
 ]

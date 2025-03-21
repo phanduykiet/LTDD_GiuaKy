@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Map;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -43,7 +45,6 @@ public class OTPActivity extends AppCompatActivity {
     private void verifyOtp() {
         String otp = etOtp.getText().toString().trim();
 
-        // Kiểm tra OTP không được để trống
         if (otp.isEmpty()) {
             etOtp.setError("Vui lòng nhập mã OTP!");
             return;
@@ -51,31 +52,34 @@ public class OTPActivity extends AppCompatActivity {
 
         // Gọi API để xác thực OTP
         UserApi userApi = ApiClient.getRetrofitInstance().create(UserApi.class);
-        Call<String> call = userApi.verifyOtp(email, otp);
+        Call<Map<String, String>> call = userApi.verifyOtp(email, otp);
 
-        call.enqueue(new Callback<String>() {
+        call.enqueue(new Callback<Map<String, String>>() {
             @Override
-            public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
+            public void onResponse(@NonNull Call<Map<String, String>> call, @NonNull Response<Map<String, String>> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    String message = response.body(); // Lấy chuỗi trả về trực tiếp
-                    Log.d("OtpActivity", "Xác thực OTP thành công: " + message);
-                    Toast.makeText(OTPActivity.this, "Xác thực thành công!", Toast.LENGTH_SHORT).show();
+                    Map<String, String> responseBody = response.body();
+                    String message = responseBody.get("message"); // Lấy thông báo từ API
 
-                    // Chuyển sang màn hình chính hoặc màn hình tiếp theo
-                    Intent intent = new Intent(OTPActivity.this, MainActivity.class);
+                    Log.d("OtpActivity", "Xác thực OTP thành công: " + message);
+                    Toast.makeText(OTPActivity.this, message, Toast.LENGTH_SHORT).show();
+
+                    // Chuyển sang LoginActivity
+                    Intent intent = new Intent(OTPActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
                     Log.d("OtpActivity", "Xác thực OTP thất bại: " + response.message());
-                    Toast.makeText(OTPActivity.this, "Mã OTP không hợp lệ!" + email, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OTPActivity.this, "Mã OTP không hợp lệ!", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(@NonNull Call<String> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<Map<String, String>> call, @NonNull Throwable t) {
                 Log.d("OtpActivity", "Lỗi: " + t.getMessage());
                 Toast.makeText(OTPActivity.this, "Lỗi kết nối, vui lòng thử lại!", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
 }

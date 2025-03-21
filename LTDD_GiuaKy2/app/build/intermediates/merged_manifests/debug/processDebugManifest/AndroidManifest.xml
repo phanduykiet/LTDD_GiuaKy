@@ -30,6 +30,15 @@
         android:testOnly="true"
         android:theme="@style/Theme.LTDD_GiuaKy"
         android:usesCleartextTraffic="true" >
+
+        <!-- IntroActivity -->
+        <activity
+            android:name="vn.iotstar.ltdd_giuaky.activities.LoginActivity"
+            android:exported="true" />
+        <!-- IntroActivity -->
+        <activity
+            android:name="vn.iotstar.ltdd_giuaky.activities.RegisterActivity"
+            android:exported="true" />
         <activity
             android:name="vn.iotstar.ltdd_giuaky.activities.OTPActivity"
             android:exported="false" />
@@ -37,11 +46,7 @@
             android:name="vn.iotstar.ltdd_giuaky.activities.MainActivity"
             android:exported="false" />
         <activity
-            android:name="vn.iotstar.ltdd_giuaky.activities.RegisterActivity"
-            android:exported="false" />
-        <!-- Khai báo RetrofitActivity -->
-        <activity
-            android:name="vn.iotstar.ltdd_giuaky.activities.RetrofitActivity"
+            android:name="vn.iotstar.ltdd_giuaky.activities.IntroActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,6 +54,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Khai báo RetrofitActivity -->
+        <activity
+            android:name="vn.iotstar.ltdd_giuaky.activities.RetrofitActivity"
+            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

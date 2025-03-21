@@ -43,10 +43,12 @@ public class LoginActivity extends AppCompatActivity {
         txtRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
+
             }
         });
+
 
         // Set login button on click:
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
-        String url = "http://172.172.30.155:8080/login";
+        String url = "http://10.0.2.2:8080/login";
 
         // Tạo JSON Object từ dữ liệu nhập vào
         JSONObject params = new JSONObject();
@@ -79,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Tạo Request
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                Request.Method.PUT,  // API yêu cầu phương thức PUT
+                Request.Method.POST,
                 url,
                 params,
                 new Response.Listener<JSONObject>() {
@@ -89,12 +91,16 @@ public class LoginActivity extends AppCompatActivity {
                             // Kiểm tra phản hồi từ server
                             if (response.has("email")) {
                                 String email = response.getString("email");
+                                String name = response.optString("name", "Unknown"); // Lấy tên từ JSON
+                                String avatar = response.optString("avatar", null); // Lấy avatar từ JSON
 
-                                // Điều hướng đến MainActivity nếu đăng nhập thành công
-                                Intent goToHome = new Intent(LoginActivity.this, MainActivity.class);
-                                goToHome.putExtra("email", email);
+                                // Điều hướng đến RetrofitActivity
+                                Intent goToRetrofitActivity = new Intent(LoginActivity.this, RetrofitActivity.class);
+                                goToRetrofitActivity.putExtra("email", email);
+                                goToRetrofitActivity.putExtra("name", name);
+                                goToRetrofitActivity.putExtra("avatar", avatar);
 
-                                startActivity(goToHome);
+                                startActivity(goToRetrofitActivity);
                                 finish();
                             } else {
                                 Toast.makeText(LoginActivity.this, "Lỗi đăng nhập!", Toast.LENGTH_SHORT).show();

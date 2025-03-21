@@ -72,6 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
         call.enqueue(new Callback<ApiResponse>() {
             @Override
             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                Log.d("RegisterActivity", "API phản hồi với mã: " + response.code());
                 if (response.isSuccessful()) {
                     // Đăng ký thành công, chuyển sang OTPActivity
                     Log.d("RegisterActivity", "Đăng ký thành công");
