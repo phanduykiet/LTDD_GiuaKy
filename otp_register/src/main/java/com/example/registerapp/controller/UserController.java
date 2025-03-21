@@ -33,7 +33,8 @@ public class UserController {
   public ResponseEntity<String> regenerateOtp(@RequestParam String email) {
     return new ResponseEntity<>(userService.regenerateOtp(email), HttpStatus.OK);
   }
-  @PutMapping("/login")
+//22110367_PhungGiaLong
+  @PostMapping("/login")
   public User login(@RequestBody LoginDto loginDto) {
     return userService.login(loginDto);
   }
