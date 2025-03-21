@@ -16,4 +16,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- RecyclerView cho danh mục -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
+
+    <!-- RecyclerView cho sản phẩm -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
