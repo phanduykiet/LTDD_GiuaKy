@@ -9,7 +9,12 @@ import com.example.registerapp.util.OtpUtil;
 import jakarta.mail.MessagingException;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,49 +27,75 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-	public String register(RegisterDto registerDto) {
-		String otp = otpUtil.generateOtp();
-		try {
-			emailUtil.sendOtpEmail(registerDto.getEmail(), otp);
-		} catch (MessagingException e) {
-			throw new RuntimeException("Unable to send otp please try again");
-		}
-		User user = new User();
-		user.setName(registerDto.getName());
-		user.setEmail(registerDto.getEmail());
-		user.setPassword(registerDto.getPassword());
-		user.setOtp(otp);
-		user.setOtpGeneratedTime(LocalDateTime.now());
-		userRepository.save(user);
-		return "User registration successful";
+	public ResponseEntity<Map<String, String>> register(RegisterDto registerDto) {
+	    String otp = otpUtil.generateOtp();
+	    Map<String, String> response = new HashMap<>();
+	    
+	    try {
+	        emailUtil.sendOtpEmail(registerDto.getEmail(), otp);
+	    } catch (MessagingException e) {
+	        response.put("message", "Unable to send OTP, please try again");
+	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+	    }
+
+	    User user = new User();
+	    user.setName(registerDto.getName());
+	    user.setEmail(registerDto.getEmail());
+	    user.setPassword(registerDto.getPassword());
+	    user.setOtp(otp);
+	    user.setOtpGeneratedTime(LocalDateTime.now());
+	    
+	    userRepository.save(user);
+
+	    response.put("message", "User registration successful");
+	    return ResponseEntity.ok(response);
+	}
+	public ResponseEntity<Map<String, String>> verifyAccount(String email, String otp) {
+	    Map<String, String> response = new HashMap<>();
+	    
+	    User user = userRepository.findByEmail(email)
+	            .orElseThrow(() -> new RuntimeException("User not found with this email: " + email));
+
+	    if (user.getOtp() == null || !user.getOtp().equals(otp)) {
+	        response.put("message", "Invalid OTP. Please regenerate OTP and try again.");
+	        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+	    }
+
+	    if (Duration.between(user.getOtpGeneratedTime(), LocalDateTime.now()).getSeconds() >= (1 * 60)) {
+	        response.put("message", "OTP expired. Please regenerate OTP.");
+	        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+	    }
+
+	    user.setActive(true);
+	    userRepository.save(user);
+	    
+	    response.put("message", "OTP verified successfully. You can now log in.");
+	    return ResponseEntity.ok(response);
 	}
 
-	public String verifyAccount(String email, String otp) {
-		User user = userRepository.findByEmail(email)
-				.orElseThrow(() -> new RuntimeException("User not found with this email: " + email));
-		if (user.getOtp().equals(otp)
-				&& Duration.between(user.getOtpGeneratedTime(), LocalDateTime.now()).getSeconds() < (1 * 60)) {
-			user.setActive(true);
-			userRepository.save(user);
-			return "OTP verified you can login";
-		}
-		return "Please regenerate otp and try again";
+
+	public ResponseEntity<Map<String, String>> regenerateOtp(String email) {
+	    Map<String, String> response = new HashMap<>();
+
+	    User user = userRepository.findByEmail(email)
+	            .orElseThrow(() -> new RuntimeException("User not found with this email: " + email));
+
+	    String otp = otpUtil.generateOtp();
+	    try {
+	        emailUtil.sendOtpEmail(email, otp);
+	    } catch (MessagingException e) {
+	        response.put("message", "Unable to send OTP. Please try again.");
+	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+	    }
+
+	    user.setOtp(otp);
+	    user.setOtpGeneratedTime(LocalDateTime.now());
+	    userRepository.save(user);
+
+	    response.put("message", "OTP sent successfully. Please verify your account within 1 minute.");
+	    return ResponseEntity.ok(response);
 	}
 
-	public String regenerateOtp(String email) {
-		User user = userRepository.findByEmail(email)
-				.orElseThrow(() -> new RuntimeException("User not found with this email: " + email));
-		String otp = otpUtil.generateOtp();
-		try {
-			emailUtil.sendOtpEmail(email, otp);
-		} catch (MessagingException e) {
-			throw new RuntimeException("Unable to send otp please try again");
-		}
-		user.setOtp(otp);
-		user.setOtpGeneratedTime(LocalDateTime.now());
-		userRepository.save(user);
-		return "Email sent... please verify account within 1 minute";
-	}
 
 	public User login(LoginDto loginDto) {
 		User user = userRepository.findByEmail(loginDto.getEmail())

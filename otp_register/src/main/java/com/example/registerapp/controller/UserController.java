@@ -4,6 +4,10 @@ import com.example.registerapp.dto.LoginDto;
 import com.example.registerapp.dto.RegisterDto;
 import com.example.registerapp.entity.User;
 import com.example.registerapp.service.UserService;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,24 +24,27 @@ public class UserController {
   private UserService userService;
 
   @PostMapping("/register")
-  public ResponseEntity<String> register(@RequestBody RegisterDto registerDto) {
-    return new ResponseEntity<>(userService.register(registerDto), HttpStatus.OK);
+  public ResponseEntity<Map<String, String>> register(@RequestBody RegisterDto registerDto) {
+      return userService.register(registerDto);
   }
 
-  @PutMapping("/verify-account")
-  public ResponseEntity<String> verifyAccount(@RequestParam String email,
-      @RequestParam String otp) {
-    return new ResponseEntity<>(userService.verifyAccount(email, otp), HttpStatus.OK);
+
+  @PostMapping("/verify")
+  public ResponseEntity<Map<String, String>> verifyAccount(@RequestParam String email,
+                                                           @RequestParam String otp) {
+      return (ResponseEntity<Map<String, String>>) userService.verifyAccount(email, otp);
   }
-  @PutMapping("/regenerate-otp")
-  public ResponseEntity<String> regenerateOtp(@RequestParam String email) {
-    return new ResponseEntity<>(userService.regenerateOtp(email), HttpStatus.OK);
+
+  @PostMapping("/regenerate-otp")
+  public ResponseEntity<Map<String, String>> regenerateOtp(@RequestParam String email) {
+      return (ResponseEntity<Map<String, String>>) userService.regenerateOtp(email);
   }
-  @PutMapping("/login")
+
+  @PostMapping("/login")
   public User login(@RequestBody LoginDto loginDto) {
     return userService.login(loginDto);
   }
-  @PutMapping("/reset-password")
+  @PostMapping("/reset-password")
   public ResponseEntity<String> resetPassword(@RequestParam String newPassword,@RequestParam String email) {
     return new ResponseEntity<>(userService.resetPassword(newPassword,email), HttpStatus.OK);
   }
